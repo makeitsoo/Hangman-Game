@@ -1,0 +1,78 @@
+/* CSS style sheet for hangman */
+
+header {
+	height:150px;
+	width:80%;
+	text-align: center;
+	margin:50px auto;
+	border: solid;
+	font-size: 18px;
+}
+
+.container {
+	width:100%;
+	font-family: Helvetica, Times New Roman, san-serif;
+}
+
+/*
+.main {
+	background-color: blue;
+	border:solid;
+	width:50%;
+	height:500px;
+	margin:auto;
+	color:white;
+}
+*/
+
+
+.scoreboard {
+/*	background-color: gray;
+*/	border:solid black;
+	width:50%
+	height:500px;
+	margin:50px auto;
+	text-align: center;
+	color:black;
+}
+
+.guessLines {
+	height:125px;
+	width:50%;
+	text-align: center;
+	margin:50px auto;
+	border: solid;
+	font-size: 70px;
+}
+
+.right {
+	height:125px;
+	width:50%;
+	text-align: center;
+	margin:50px auto;
+	border: solid;
+	font-size: 16px;
+}
+
+.no	{
+	height:125px;
+	width:50%;
+	text-align: center;
+	margin:50px auto;
+	border: solid;
+	font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

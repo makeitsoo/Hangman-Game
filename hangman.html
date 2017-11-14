@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HangMan</title>
+<!-- 	link to style sheet and resest  -->
+	<link href="reset.css" rel="stylesheet" type="text/css">
+
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+	<div class="container">
+		<header>
+		<h1>Hangman</h1>
+<!-- 		<div class="main"> -->
+<!-- 		</div> 	 -->			
+		</header>
+
+		<div class="main">
+			<div class="scoreboard">
+				<h2>This is the main area</h2>
+				<h3>This is the scoreboard area</h3>
+				<div class="guessLines">_ _ _ _</div>
+				<div class="right">Yes there is!</div>
+				<div class="no">No, sorry..</div>
+			</div>
+		</div>	
+	</div>
+
+	<script type="text/javascript">
+var play = document.prompt("Press Ok to Play");
+if (play == true) {
+	// computer chooses word at random
+	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+	console.log(computerGuess);
+	// depeding on random word string.length set number guessLines
+	var lines = [];
+
+
+	for (i = 0; i < computerGuess.length; i++) {
+		console.log(computerGuess[i]);
+		lines.push("_");
+	}
+	console.log(lines);
+}
+else {
+	alert("Fine. Be that way.")
+}
+
+alert("Use the keyboard and try to guess the word or phrase.")
+
+// when key pressed isolate keyID for users choice via document.onKeyUp event 
+// this function is run whenever the user presses a key
+document.onKeyUp = function(event) {
+	//this tells us what key was pressed
+	var userGuess = event.key;
+}
+
+
+
+	</script>
+
+</body>
+</html>
