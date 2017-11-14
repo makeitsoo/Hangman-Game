@@ -52,7 +52,7 @@
 var words = ["packers", "patriots", "niners", "cowboys"];
 var miss = [];
 var hit = [];
-
+var guessRemain = 11;
 
 
 // prompt user if want to play then basic directions
@@ -83,22 +83,39 @@ document.onKeyUp = function(event) {
 	var userGuess = event.key;
 
 // check if user guess correct
-	if (word.indexOf(userGuess) > -1) {
-		for (var i = 0; i < word.length; i++) {
-			if (word[i] == userGuess) {
+	if (words.indexOf(userGuess) > -1) {
+		for (var i = 0; i < words.length; i++) {
+			if (words[i] == userGuess) {
 				lines[i] = userGuess;
 				console.log(lines);
+				hit++;
+				guessRemain--;
+				gameDecision();
 			}
 		}
 	}
+	//if not, then store in array "miss"
 	else {
-
+		miss.push(userGuess);
+		console.log("miss");
+		console.log(miss);
+		miss--;
+		guessRemain--;
+		gameDecision();
 	}
-	//if yes, then store in array A and display "YES!"
-	//if no, then store in array B and display "Sorry, no.."
+
+	
 // End game if:
-	//unsolved after X user tries (display "YES!")
-	//user correctly guesses all letters (display "No, sorry..")
+function gameDecision() {
+	//unsolved after X user tries (display "You Lose..")
+	if (guessRemain === 0) {
+		alert("You Lose...");
+	}
+	if (hit === words.length) {
+		alert("WINNER! Congrats!");
+	}
+}
+	//user correctly guesses all letters (display "Congrats! You Win!")
 
 }
 
