@@ -90,8 +90,7 @@ for (var i = 0; i < computerGuess.length; i++) {
 	//print correct # lines to console for testing
 	console.log(lines);
 
-// display correct # lines in DOM
-
+// display correct # lines in DOM by grabbing element id for <p> tag what to display lines in and setting equal to lines array
 function setLines() {
     document.getElementById("word-lines").innerHTML = lines;
 }
@@ -103,14 +102,22 @@ setLines()
 
 // when key pressed isolate keyID for users choice via document.onKeyUp event 
 // this function is run whenever the user presses a key
-document.onKeyUp = function(event) {
+document.onkeyup = function(event) {
 	//this tells us what key was pressed
-	var userGuess = event.key;
+	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+	console.log(userGuess);
+	alert(userGuess);
+
+
+
+
+}
+
 
 // check if user guess correct
-	if (words.indexOf(userGuess) > -1) {
-		for (var i = 0; i < words.length; i++) {
-			if (words[i] == userGuess) {
+	if (word.indexOf(userGuess) > -1) {
+		for (var i = 0; i < word.length; i++) {
+			if (word[i] == userGuess) {
 				lines[i] = userGuess;
 				console.log(lines);
 				hit++;
@@ -119,15 +126,16 @@ document.onKeyUp = function(event) {
 			}
 		}
 	}
+
 	//if not, then store in array "miss"
-	else {
-		miss.push(userGuess);
-		console.log("miss");
-		console.log(miss);
-		miss--;
-		guessRemain--;
-		gameDecision();
-	}
+	// else {
+	// 	miss.push(userGuess);
+	// 	console.log("miss");
+	// 	console.log(miss);
+	// 	miss--;
+	// 	guessRemain--;
+	// 	gameDecision();
+	// }
 
 	
 // End game if:
@@ -141,7 +149,7 @@ function gameDecision() {
 	}
 }
 	//user correctly guesses all letters (display "Congrats! You Win!")
-}
+
 
 
 
