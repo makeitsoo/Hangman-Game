@@ -32,6 +32,7 @@
 
 
 // create an array of random words
+// create an array for guess lines/underscores
 // create an array to hold letters already guessed by user
 // create a variable tallying guesses remaining for user
 // create a variable for counting # wins
@@ -51,14 +52,16 @@
 
 
 // create an array of words for computer to randomly select
-var words = ["kirk", "spock", "enterprise", "klingon", "quadrant", "transporter", "tricorder", "phaser", "stardate", "warp", "holodeck"];
+var word = ["kirk", "spock", "enterprise", "klingon", "quadrant", "transporter", "tricorder", "phaser", "stardate", "warp", "holodeck"];
+
+// create empty array for guess lines/underscores
+var lines = [];
 
 // create an array to hold letters already guessed by user
 var guessed = [];
 // could do this if want to separate correct vs incorrect guesses
 // var miss = [];
 // var hit = [];
-
 
 // create a variable counter for # wins
 var wins = 0;
@@ -72,17 +75,23 @@ var guessRemain = 11;
 alert("Press any key to get started!");
 
 
-	// computer chooses word at random
-	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-	console.log(computerGuess);
+// computer chooses word at random
+var computerGuess = word[Math.floor(Math.random() * word.length)];
+// print word to console for testing
+console.log(computerGuess);
 
-	// depeding on random word string.length set number guessLines
-	var lines = [];
+// depeding on random word string.length set number guessLines
 
-	for (var i = 0; i < computerGuess.length; i++) {
-		console.log(computerGuess[i]);
-		lines.push("_");
-	}
+for (var i = 0; i < computerGuess.length; i++) {
+	// print each letter of random word to console for testing
+	// console.log(computerGuess[i]);
+	lines.push("_");
+}
+	//print correct # lines to console for testing
+	console.log(lines);
+
+// display correct # lines in DOM
+document.innerHTML(lines);
 
 // when key pressed isolate keyID for users choice via document.onKeyUp event 
 // this function is run whenever the user presses a key
