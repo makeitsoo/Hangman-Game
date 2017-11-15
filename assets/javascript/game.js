@@ -67,7 +67,7 @@ var guessed = [];
 var wins = 0;
 
 // create a variable tallying guesses remaining for user
-var guessRemain = 11;
+var guessRemain = 9;
 
 
 // alert user to press any key to begin playing
@@ -91,7 +91,15 @@ for (var i = 0; i < computerGuess.length; i++) {
 	console.log(lines);
 
 // display correct # lines in DOM
-document.innerHTML(lines);
+
+function setLines() {
+    document.getElementById("word-lines").innerHTML = lines;
+}
+setLines()
+
+// var wordLines = document.getElementById("word-lines");
+// console.log(wordLines)
+// document.innerHTML("#word-lines") = wordLines;
 
 // when key pressed isolate keyID for users choice via document.onKeyUp event 
 // this function is run whenever the user presses a key
