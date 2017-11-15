@@ -1,5 +1,60 @@
 /* CSS style sheet for hangman */
 
+
+.jumbotron {
+	color:black;
+/*	background-image: url(http://www.abystyle.com/c/121-category_default/star-trek.jpg)
+	background-repeat: no-repeat;
+	background-position: left;
+	*/
+	background-color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+h1 {
+	font-size: 50px;
+	border-bottom: solid 1px black;
+}
+
+ #mainPic {
+ 	width:100%;
+ 	height:auto;
+ }
+
+ #smallPic {
+ 	margin-top:10px;
+ 	margin-left:auto;
+ 	margin-right:auto;
+ 	display:block;
+ }
+.container {
+/*	background-color: gray;
+*/	font-family: Helvetica, Times New Roman, san-serif;
+	width:100%;
+	padding-bottom: 55px;
+}
+
+.left {
+	margin:5px 5px 5px 5px;
+	border:solid black 1px;
+	height:290px;
+}
+
+.mid {
+	
+}
+
+.right {
+	margin:5px 5px 5px 5px;
+	border:solid black 1px;
+	height:290px;
+}
+
+
+/*Everything below here is for non-bootstrap if I decide to go that route 
+*/
 /*header {
 	height:150px;
 	width:80%;
@@ -55,53 +110,7 @@
 
 */
 
-/*Everything above here is for non-bootstrap if I decide to go that route 
-*/
-.jumbotron {
-	color:black;
-/*	background-image: url(http://www.abystyle.com/c/121-category_default/star-trek.jpg)
-*//*	background-repeat: no-repeat;
-	background-position: left;
-	*/
-	background-color: white;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
- #mainPic {
- 	width:100%;
- 	height:auto;
- }
 
- #smallPic {
- 	margin-top:10px;
- 	margin-left:auto;
- 	margin-right:auto;
- 	display:block;
- }
-.container {
-/*	background-color: gray;
-*/	font-family: Helvetica, Times New Roman, san-serif;
-	width:100%;
-	padding-bottom: 55px;
-}
-
-.left {
-	margin:5px 5px 5px 5px;
-	border:solid black 1px;
-	height:400px;
-}
-
-.mid {
-	
-}
-
-.right {
-	margin:5px 5px 5px 5px;
-	border:solid black 1px;
-	height:400px;
-}
 
 
 
