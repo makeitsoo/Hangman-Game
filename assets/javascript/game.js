@@ -105,37 +105,38 @@ setLines()
 document.onkeyup = function(event) {
 	//this tells us what key was pressed
 	var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-	console.log(userGuess);
-	alert(userGuess);
-
-
-
-
-}
+	// print key pressed to console for testing
+	// console.log(userGuess);
 
 
 // check if user guess correct
-	if (word.indexOf(userGuess) > -1) {
-		for (var i = 0; i < word.length; i++) {
-			if (word[i] == userGuess) {
-				lines[i] = userGuess;
-				console.log(lines);
-				hit++;
-				guessRemain--;
-				gameDecision();
+	if (computerGuess.indexOf(userGuess) > -1) {
+		console.log("yes")
+		console.log(userGuess)
+		console.log(computerGuess)
+		for (var i = 0; i < computerGuess.length; i++) {
+		if (word[i] == userGuess) {
+		lines[i] = userGuess;
+		console.log(lines);
+		hit++;
+		guessRemain--;
+		gameDecision();
 			}
 		}
 	}
-
 	//if not, then store in array "miss"
-	// else {
-	// 	miss.push(userGuess);
-	// 	console.log("miss");
-	// 	console.log(miss);
-	// 	miss--;
-	// 	guessRemain--;
-	// 	gameDecision();
-	// }
+	else {
+	console.log("no")
+	console.log(userGuess)
+	// miss.push(userGuess);
+	// console.log("miss");
+	// console.log(miss);
+	// miss--;
+	// guessRemain--;
+	// gameDecision();
+	}
+}
+
 
 	
 // End game if:
