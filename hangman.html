@@ -4,20 +4,46 @@
 <head>
 	<title>HangMan</title>
 <!-- 	link to style sheet and resest  -->
-	<link href="reset.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+<!--bootstrap link -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
-	<link href="style.css" rel="stylesheet" type="text/css">
-
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css">
+	<script src="assets/javascript/game.js"></script>
 </head>
-<body>
-	<div class="container">
-		<header>
-		<h1>Hangman</h1>
-<!-- 		<div class="main"> -->
-<!-- 		</div> 	 -->			
-		</header>
 
-		<div class="main">
+
+<body>
+	<div class="jumbotron">
+		<header>
+			<h1 class ="text-center"><strong>Hangman</h1>
+		</header>
+	</div> <!--jumbotron -->
+
+
+	<div class="container">
+		<div class="row">
+				<h2 class="text-center">Scoreboard</h2>
+				<div class="col-md-2">
+					<p></p>
+				</div>
+				<div class="col-md-4 left">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, molestiae modi accusantium animi magnam veniam, impedit asperiores sint consequuntur debitis fugit quibusdam dolor, iusto sed porro ab minus voluptatibus amet.</p>
+				</div> <!--col-md-6 close -->
+
+				<div class="col-md-4 right">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, molestiae modi accusantium animi magnam veniam, impedit asperiores sint consequuntur debitis fugit quibusdam dolor, iusto sed porro ab minus voluptatibus amet.</p>
+				</div>
+				<div class="col-md-2 mid">
+					<p></p>
+				</div>
+		</div> <!--row close --> 
+	</div>  <!--container close -->
+
+
+
+<!--use this instead of bootstrap if want -->
+<!-- 		<div class="main">
 			<div class="scoreboard">
 				<h2>This is the main area</h2>
 				<h3>This is the scoreboard area</h3>
@@ -25,41 +51,9 @@
 				<div class="right">Yes there is!</div>
 				<div class="no">No, sorry..</div>
 			</div>
-		</div>	
-	</div>
-
-	<script type="text/javascript">
-var play = document.prompt("Press Ok to Play");
-if (play == true) {
-	// computer chooses word at random
-	var computerGuess = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-	console.log(computerGuess);
-	// depeding on random word string.length set number guessLines
-	var lines = [];
+		</div>	-->
 
 
-	for (i = 0; i < computerGuess.length; i++) {
-		console.log(computerGuess[i]);
-		lines.push("_");
-	}
-	console.log(lines);
-}
-else {
-	alert("Fine. Be that way.")
-}
-
-alert("Use the keyboard and try to guess the word or phrase.")
-
-// when key pressed isolate keyID for users choice via document.onKeyUp event 
-// this function is run whenever the user presses a key
-document.onKeyUp = function(event) {
-	//this tells us what key was pressed
-	var userGuess = event.key;
-}
-
-
-
-	</script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 /* CSS style sheet for hangman */
 
-header {
+/*header {
 	height:150px;
 	width:80%;
 	text-align: center;
@@ -14,21 +14,10 @@ header {
 	font-family: Helvetica, Times New Roman, san-serif;
 }
 
-/*
-.main {
-	background-color: blue;
-	border:solid;
-	width:50%;
-	height:500px;
-	margin:auto;
-	color:white;
-}
-*/
 
 
 .scoreboard {
-/*	background-color: gray;
-*/	border:solid black;
+	border:solid black;
 	width:50%
 	height:500px;
 	margin:50px auto;
@@ -64,14 +53,33 @@ header {
 }
 
 
+*/
 
+/*Everything above here is for non-bootstrap if I decide to go that route 
+*/
 
+.container {
+	background-color: gray;
+	font-family: Helvetica, Times New Roman, san-serif;
+	width:100%;
+	padding-bottom: 55px;
+}
 
+.left {
+	margin-left:5px;
+	border:solid black 1px;
+	height:400px;
+}
 
+.mid {
+	
+}
 
-
-
-
+.right {
+	margin-right:5px;
+	border:solid black 1px;
+	height:400px;
+}
 
 
 
