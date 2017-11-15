@@ -32,9 +32,11 @@
 
 
 // create an array of random words
+// create an array to hold letters already guessed by user
+// create a variable tallying guesses remaining for user
+// create a variable for counting # wins
 // computer chooses word at random
 // depeding on random word string.length set number guessLines
-// prompt user directions or ask if want to play
 // when key pressed isolate keyID for users choice via document.onKeyUp event 
 // check if user guess correct
 	//if yes, then store in array A and display "YES!"
@@ -48,20 +50,26 @@
 
 
 
-// create an array of random words and two empty arrays for wins/losses
-var words = ["packers", "patriots", "niners", "cowboys"];
-var miss = [];
-var hit = [];
+// create an array of words for computer to randomly select
+var words = ["kirk", "spock", "enterprise", "klingon", "quadrant", "transporter", "tricorder", "phaser", "stardate", "warp", "holodeck"];
+
+// create an array to hold letters already guessed by user
+var guessed = [];
+// could do this if want to separate correct vs incorrect guesses
+// var miss = [];
+// var hit = [];
+
+
+// create a variable counter for # wins
+var wins = 0;
+
+// create a variable tallying guesses remaining for user
 var guessRemain = 11;
 
 
-// prompt user if want to play then basic directions
+// alert user to press any key to begin playing
 
 alert("Press any key to get started!");
-alert("Use the keyboard and try to guess the word or phrase.")
-document.onKeyUp = function(event); {
-	console.log("Test");
-}
 
 
 	// computer chooses word at random
@@ -74,7 +82,7 @@ document.onKeyUp = function(event); {
 	for (var i = 0; i < computerGuess.length; i++) {
 		console.log(computerGuess[i]);
 		lines.push("_");
-
+	}
 
 // when key pressed isolate keyID for users choice via document.onKeyUp event 
 // this function is run whenever the user presses a key
@@ -116,7 +124,6 @@ function gameDecision() {
 	}
 }
 	//user correctly guesses all letters (display "Congrats! You Win!")
-
 }
 
 
