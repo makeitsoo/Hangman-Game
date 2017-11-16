@@ -19,6 +19,8 @@ h1 {
 }
 h2 {
 	border-bottom: 1px solid white;
+	padding-top: 0px;
+	margin-top: 5px;
 }
 
  #mainPic {
@@ -39,6 +41,16 @@ h2 {
  #caption {
  	padding-top:10px;
  }
+/* #guessed {
+ 	float:right;
+ }
+ #wins {
+ 	float:right;
+ }
+ #remaining {
+ 	float:right;
+ }*/
+
 .container {
 /*	background-color: gray;
 */	font-family: Helvetica, Times New Roman, san-serif;
@@ -49,7 +61,7 @@ h2 {
 .left {
 	margin:5px 5px 5px 5px;
 	border:solid black 1px;
-	height:290px;
+	height:300px;
 }
 
 .mid {
@@ -59,7 +71,7 @@ h2 {
 .right {
 	margin:5px 5px 5px 5px;
 	border:solid black 1px;
-	height:290px;
+	height:300px;
 }
 
 

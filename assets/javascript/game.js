@@ -67,7 +67,7 @@ var guessed = [];
 var wins = 0;
 
 // create a variable tallying guesses remaining for user
-var guessRemain = 9;
+var guessRemain = 12;
 var hitCounter = 0;
 
 // alert user to press any key to begin playing
@@ -120,13 +120,15 @@ document.onkeyup = function(event) {
 			lines[i] = userGuess;
 			console.log(lines);
 			guessed.push(userGuess);
+			document.getElementById("guessed").innerHTML = guessed;
 			console.log(guessed);
+			document.getElementById("word-lines").innerHTML = lines;
 			guessRemain--;
+			document.getElementById("remaining").innerHTML = guessRemain;
 			console.log(guessRemain);
 			hitCounter++;
 			console.log(hitCounter);
 			gameDecision();
-			document.getElementById("word-lines").innerHTML = lines;
 			}
 		}
 	}
@@ -135,10 +137,10 @@ document.onkeyup = function(event) {
 			console.log("no");
 			console.log(userGuess);
 			guessed.push(userGuess);
+			document.getElementById("guessed").innerHTML = guessed;
 			console.log(guessed);
-			// console.log(miss);
-
 			guessRemain--;
+			document.getElementById("remaining").innerHTML = guessRemain;
 			console.log(guessRemain);
 			gameDecision();
 	}
