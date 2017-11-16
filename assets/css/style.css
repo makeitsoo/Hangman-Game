@@ -17,6 +17,9 @@ h1 {
 	font-size: 50px;
 	border-bottom: solid 1px black;
 }
+h2 {
+	border-bottom: 1px solid white;
+}
 
  #mainPic {
  	width:100%;
@@ -28,6 +31,13 @@ h1 {
  	margin-left:auto;
  	margin-right:auto;
  	display:block;
+ }
+ #word-lines {
+ 	margin-top:5px;
+ 	font-size: 30px;
+ }
+ #caption {
+ 	padding-top:10px;
  }
 .container {
 /*	background-color: gray;

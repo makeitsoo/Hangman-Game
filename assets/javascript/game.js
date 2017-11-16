@@ -156,6 +156,7 @@ function gameDecision() {
 	//user correctly guesses all letters (display "Congrats! You Win!")
 	if (hitCounter === computerGuess.length) {
 		alert("WINNER! Congrats!");
+		wins++;
 		location.reload();
 	}
 }
