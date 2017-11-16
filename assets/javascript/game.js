@@ -125,11 +125,11 @@ document.onkeyup = function(event) {
 			console.log(guessRemain);
 			hitCounter++;
 			console.log(hitCounter);
-		// gameDecision();
+			gameDecision();
 			}
 		}
 	}
-	//if not, then store in array "miss"
+	//if not, then store in userGuess in guessed array and reduce guessRemain by one
 	else {
 			console.log("no");
 			console.log(userGuess);
@@ -139,23 +139,23 @@ document.onkeyup = function(event) {
 
 			guessRemain--;
 			console.log(guessRemain);
-			// gameDecision();
+			gameDecision();
 	}
 }
 
 
 	
 // End game if:
-// function gameDecision() {
-// 	//unsolved after X user tries (display "You Lose..")
-// 	if (guessRemain === 0) {
-// 		alert("You Lose...");
-// 	}
-// 	if (hitCounter === word.length) {
-// 		alert("WINNER! Congrats!");
-// 	}
-// }
+function gameDecision() {
+	//unsolved after X user tries (display "You Lose..")
+	if (guessRemain === 0) {
+		alert("You Lose...");
+	}
 	//user correctly guesses all letters (display "Congrats! You Win!")
+	if (hitCounter === computerGuess.length) {
+		alert("WINNER! Congrats!");
+	}
+}
 
 
 
