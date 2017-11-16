@@ -151,10 +151,12 @@ function gameDecision() {
 	//unsolved after X user tries (display "You Lose..")
 	if (guessRemain === 0) {
 		alert("You Lose...");
+		location.reload();
 	}
 	//user correctly guesses all letters (display "Congrats! You Win!")
 	if (hitCounter === computerGuess.length) {
 		alert("WINNER! Congrats!");
+		location.reload();
 	}
 }
 
