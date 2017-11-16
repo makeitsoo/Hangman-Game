@@ -68,7 +68,7 @@ var wins = 0;
 
 // create a variable tallying guesses remaining for user
 var guessRemain = 9;
-
+var hitCounter = 0;
 
 // alert user to press any key to begin playing
 
@@ -111,44 +111,50 @@ document.onkeyup = function(event) {
 
 // check if user guess correct
 	if (computerGuess.indexOf(userGuess) > -1) {
-		console.log("yes")
-		console.log(userGuess)
-		console.log(computerGuess)
+		// console.log("yes")
+		// console.log(userGuess)
+		//here is where I am struggling
 		for (var i = 0; i < computerGuess.length; i++) {
-		if (word[i] == userGuess) {
-		lines[i] = userGuess;
-		console.log(lines);
-		hit++;
-		guessRemain--;
-		gameDecision();
+		if (computerGuess[i] == userGuess) {
+			console.log("yes! " + userGuess + " exists");
+			lines[i] = userGuess;
+			console.log(lines);
+			guessed.push(userGuess);
+			console.log(guessed);
+			guessRemain--;
+			console.log(guessRemain);
+			hitCounter++;
+			console.log(hitCounter);
+		// gameDecision();
 			}
 		}
 	}
 	//if not, then store in array "miss"
 	else {
-	console.log("no")
-	console.log(userGuess)
-	// miss.push(userGuess);
-	// console.log("miss");
-	// console.log(miss);
-	// miss--;
-	// guessRemain--;
-	// gameDecision();
+			console.log("no");
+			console.log(userGuess);
+			guessed.push(userGuess);
+			console.log(guessed);
+			// console.log(miss);
+
+			guessRemain--;
+			console.log(guessRemain);
+			// gameDecision();
 	}
 }
 
 
 	
 // End game if:
-function gameDecision() {
-	//unsolved after X user tries (display "You Lose..")
-	if (guessRemain === 0) {
-		alert("You Lose...");
-	}
-	if (hit === words.length) {
-		alert("WINNER! Congrats!");
-	}
-}
+// function gameDecision() {
+// 	//unsolved after X user tries (display "You Lose..")
+// 	if (guessRemain === 0) {
+// 		alert("You Lose...");
+// 	}
+// 	if (hitCounter === word.length) {
+// 		alert("WINNER! Congrats!");
+// 	}
+// }
 	//user correctly guesses all letters (display "Congrats! You Win!")
 
 
