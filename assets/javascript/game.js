@@ -126,6 +126,7 @@ document.onkeyup = function(event) {
 			hitCounter++;
 			console.log(hitCounter);
 			gameDecision();
+			document.getElementById("word-lines").innerHTML = lines;
 			}
 		}
 	}
