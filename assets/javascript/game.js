@@ -72,7 +72,7 @@ var hitCounter = 0;
 
 // alert user to press any key to begin playing
 
-alert("Press any key to get started!");
+// alert("Press any key to get started!");
 
 
 // computer chooses word at random
@@ -152,11 +152,11 @@ document.onkeyup = function(event) {
 function gameDecision() {
 	//unsolved after X user tries (display "You Lose..")
 	if (guessRemain === 0) {
-		alert("You Lose...");
+		alert("You Lose...Try Again");
 		location.reload();
 	}
 	//user correctly guesses all letters (display "Congrats! You Win!")
-	if (hitCounter === computerGuess.length) {
+	else if (hitCounter === computerGuess.length) {
 		alert("WINNER! Congrats!");
 		wins++;
 		location.reload();
