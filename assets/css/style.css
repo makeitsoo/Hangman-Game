@@ -16,6 +16,7 @@
 h1 {
 	font-size: 50px;
 	border-bottom: solid 1px black;
+	color:#5192c9;
 }
 h2 {
 	border-bottom: 1px solid white;
@@ -73,7 +74,20 @@ h2 {
 	border:solid black 1px;
 	height:300px;
 }
+#instr {
+	animation-name: morph;
+	animation-duration: 4s;
+	animation-delay: 1s;
+}
+/* CSS animation */
 
+@keyframes morph {
+    0%   {color: red;}
+    25%  {color: #ddb743;}
+    50%  {color: #5192c9;}
+    100% {color: #ddb743;}
+    25% {font-size: 20px;}
+}
 
 /*Everything below here is for non-bootstrap if I decide to go that route 
 */
