@@ -59,32 +59,30 @@ var lines = [];
 
 // create an array to hold letters already guessed by user
 var guessed = [];
-// could do this if want to separate correct vs incorrect guesses
-// var miss = [];
-// var hit = [];
 
 // create a variable counter for # wins
 var wins = 0;
 
 // create a variable tallying guesses remaining for user
 var guessRemain = 12;
+
+// create a variable that tallies correct guesses (in End Game function uses this to compare to length of random word)
 var hitCounter = 0;
 
 // alert user to press any key to begin playing
-
 // alert("Press any key to get started!");
 
 
-// computer chooses word at random
+// computer chooses word at random from array word and stores in computerGuess var
 var computerGuess = word[Math.floor(Math.random() * word.length)];
 // print word to console for testing
 console.log(computerGuess);
 
 // depeding on random word string.length set number guessLines
-
 for (var i = 0; i < computerGuess.length; i++) {
 	// print each letter of random word to console for testing
 	// console.log(computerGuess[i]);
+	//for each i in random word chosen push a additional _ to lines var
 	lines.push("_");
 }
 	//print correct # lines to console for testing
@@ -96,11 +94,8 @@ function setLines() {
 }
 setLines()
 
-// var wordLines = document.getElementById("word-lines");
-// console.log(wordLines)
-// document.innerHTML("#word-lines") = wordLines;
 
-// when key pressed isolate keyID for users choice via document.onKeyUp event 
+// when key pressed isolate keyID for users choice via document.onkeyup event 
 // this function is run whenever the user presses a key
 document.onkeyup = function(event) {
 	//this tells us what key was pressed
@@ -113,21 +108,28 @@ document.onkeyup = function(event) {
 	if (computerGuess.indexOf(userGuess) > -1) {
 		// console.log("yes")
 		// console.log(userGuess)
-		//here is where I am struggling
+		// loops through each index of string to check if match with key pressed by user
 		for (var i = 0; i < computerGuess.length; i++) {
 		if (computerGuess[i] == userGuess) {
 			console.log("yes! " + userGuess + " exists");
 			lines[i] = userGuess;
 			console.log(lines);
+			// userGuess is pushed to array guessed
 			guessed.push(userGuess);
+			// then printed to DOM in #id guessed element
 			document.getElementById("guessed").innerHTML = guessed;
 			console.log(guessed);
+			// prints lines array (underscores) to DOM in word-lines element
 			document.getElementById("word-lines").innerHTML = lines;
+			// decreases remaining guesses by one
 			guessRemain--;
+			// prints to DOM in remaining element
 			document.getElementById("remaining").innerHTML = guessRemain;
 			console.log(guessRemain);
+			// increases correct guess counter by one
 			hitCounter++;
 			console.log(hitCounter);
+			// invokes gameDecision function 
 			gameDecision();
 			}
 		}
