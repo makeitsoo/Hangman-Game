@@ -24,33 +24,33 @@ h2 {
 	margin-top: 5px;
 }
 
- #mainPic {
+#mainPic {
  	width:100%;
  	height:auto;
- }
+}
 
- #smallPic {
- 	margin-top:10px;
- 	margin-left:auto;
- 	margin-right:auto;
- 	display:block;
- }
- #word-lines {
- 	margin-top:5px;
- 	font-size: 30px;
- }
- #caption {
- 	padding-top:10px;
- }
-/* #guessed {
- 	float:right;
- }
- #wins {
- 	float:right;
- }
+#smallPic {
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+}
+#word-lines {
+	margin-top:5px;
+	font-size: 30px;
+}
+#caption {
+	padding-top:10px;
+}
+#guessed {
+	color:#ddb743;
+}
+#wins {
+color:#ddb743;
+}
  #remaining {
- 	float:right;
- }*/
+	color:#ddb743;
+}
 
 .container {
 /*	background-color: gray;
