@@ -90,7 +90,7 @@ for (var i = 0; i < computerGuess.length; i++) {
 
 // display correct # lines in DOM by grabbing element id for <p> tag what to display lines in and setting equal to lines array
 function setLines() {
-    document.getElementById("word-lines").innerHTML = lines;
+    document.getElementById("word-lines").innerHTML = lines.join(" ");
 }
 setLines()
 
@@ -120,7 +120,7 @@ document.onkeyup = function(event) {
 			document.getElementById("guessed").innerHTML = guessed;
 			console.log(guessed);
 			// prints lines array (underscores) to DOM in word-lines element
-			document.getElementById("word-lines").innerHTML = lines;
+			document.getElementById("word-lines").innerHTML = lines.join(" ");
 			// decreases remaining guesses by one
 			guessRemain--;
 			// prints to DOM in remaining element
@@ -158,7 +158,7 @@ function gameDecision() {
 		location.reload();
 	}
 	//user correctly guesses all letters (display "Congrats! You Win!")
-	else if (hitCounter === computerGuess.length) {
+	else if (lines.join("") === computerGuess) {
 		alert("WINNER! Congrats!");
 		wins++;
 		location.reload();
