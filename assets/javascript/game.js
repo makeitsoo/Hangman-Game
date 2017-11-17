@@ -121,8 +121,9 @@ document.onkeyup = function(event) {
 			console.log(guessed);
 			// prints lines array (underscores) to DOM in word-lines element
 			document.getElementById("word-lines").innerHTML = lines.join(" ");
-			// decreases remaining guesses by one
-			guessRemain--;
+			// decreases remaining guesses by one (removed this - child friendly version)
+			// guessRemain--;
+			
 			// prints to DOM in remaining element
 			document.getElementById("remaining").innerHTML = guessRemain;
 			console.log(guessRemain);
