@@ -66,9 +66,6 @@ var wins = 0;
 // create a variable tallying guesses remaining for user
 var guessRemain = 12;
 
-// create a variable that tallies correct guesses (in End Game function uses this to compare to length of random word)
-var hitCounter = 0;
-
 // alert user to press any key to begin playing
 // alert("Press any key to get started!");
 
@@ -117,19 +114,17 @@ document.onkeyup = function(event) {
 			// userGuess is pushed to array guessed
 			guessed.push(userGuess);
 			// then printed to DOM in #id guessed element
-			document.getElementById("guessed").innerHTML = guessed;
-			console.log(guessed);
+			document.getElementById("guessed").innerHTML = guessed.join("  ");
+			console.log(guessed.join());
 			// prints lines array (underscores) to DOM in word-lines element
 			document.getElementById("word-lines").innerHTML = lines.join(" ");
 			// decreases remaining guesses by one (removed this - child friendly version)
 			// guessRemain--;
-			
+
 			// prints to DOM in remaining element
 			document.getElementById("remaining").innerHTML = guessRemain;
 			console.log(guessRemain);
-			// increases correct guess counter by one
-			hitCounter++;
-			console.log(hitCounter);
+
 			// invokes gameDecision function 
 			gameDecision();
 			}
@@ -140,8 +135,8 @@ document.onkeyup = function(event) {
 			console.log("no");
 			console.log(userGuess);
 			guessed.push(userGuess);
-			document.getElementById("guessed").innerHTML = guessed;
-			console.log(guessed);
+			document.getElementById("guessed").innerHTML = guessed.join("  ");
+			console.log(guessed.join());
 			guessRemain--;
 			document.getElementById("remaining").innerHTML = guessRemain;
 			console.log(guessRemain);
