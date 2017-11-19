@@ -1,4 +1,6 @@
-//HANGMAN-GAME 
+
+window.onload = function() {
+//HANGMAN-GAME
 
 // This is the JS for Hangman
 
@@ -27,23 +29,25 @@ var userGuess = [];
 var guessed = [];
 var lines = [];
 var guessRemain = 12;
-
+var wins = 0;
 
 function startGame(){
 	// create an array of words for computer to randomly select
 	var word = ["kirk", "spock", "enterprise", "klingon", "quadrant", "transporter", "tricorder", "phaser", "stardate", "warp", "holodeck"];
 
 	// create empty array for guess lines/underscores
-	var lines = [];
+	lines = [];
 
 	// create an array to hold letters already guessed by user
-	var guessed = [];
+	guessed = [];
+	document.getElementById("guessed").innerHTML = guessed.join("  ");
 
+	userGuess = []
 	// create a variable counter for # wins
-	var wins = 0;
+	// var wins = 0;
 
 	// create a variable tallying guesses remaining for user
-	var guessRemain = 12;
+	guessRemain = 12;
 
 
 	// computer chooses word at random from array word and stores in computerGuess var
@@ -122,49 +126,47 @@ document.onkeyup = function(event) {
 	}
 }
 
-
-	
 // End game if:
 function gameDecision() {
 	//unsolved after X user tries (display "You Lose..")
-	if (guessRemain === 0) {
-		alert("You Lose...Try Again");
-		// location.reload();
+	// if (guessRemain === 0) {
+	// 	alert("You Lose...Try Again");
+	// 	// location.reload();
+	// 	startGame();
+	// }
+	// //user correctly guesses all letters (display "Congrats! You Win!")
+	// else if (lines.join("") === computerGuess) {
+	// 	alert("WINNER! Congrats!");
+	// 	wins++;
+	// 	console.log(wins);
+	// 	document.getElementById("wins").innerHMTL = wins;
+
+	// 	// location.reload();
+	// 	// audioElement.play();
+	// 	startGame();
+	// }
+
+	if ((lines.join('') === computerGuess) && (guessRemain > 0) ) {
+		alert("WINNER!! Congrats!");
+		// audioElement.play(); create var audio and isolate audio element
+		// var audio = document.getElementById("myAudio"); 
+		// // play audio
+		// function playAudio() { 
+  //   	audio.play(); 
+  //   	}
+		wins++;
+		document.getElementById('wins').innerHTML = wins;
+		console.log(document.getElementById('wins').innerHTML = wins);
 		startGame();
 	}
-	//user correctly guesses all letters (display "Congrats! You Win!")
-	else if (lines.join("") === computerGuess) {
-		alert("WINNER! Congrats!");
-		wins++;
-		console.log(wins);
-		document.getElementById("wins").innerHMTL = wins;
 
-		// location.reload();
-		// audioElement.play();
+	else if (guessRemain <= 0) {
+		alert ("You Lose...Try Again");
 		startGame();
 	}
 }
 
 startGame();
-// function startGame() {
-// 		// create empty array for guess lines/underscores
-// 	lines = [];
 
-// 	// create an array to hold letters already guessed by user
-// 	guessed = [];
-
-// 	// create a variable tallying guesses remaining for user
-// 	guessRemain = 12;
-
-// 	// document.getElementById("wins").innerHMTL = wins;
-
-// 	console.log("win counter" + wins);
-// }
-      // Gets Link for victory track
-      // var audioElement = document.createElement("audio");
-      // audioElement.setAttribute("src", "Assets/captainplanet24.mp3");
-
-   
-
-
+}
 
