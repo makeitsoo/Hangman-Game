@@ -147,13 +147,14 @@ function gameDecision() {
 	// }
 
 	if ((lines.join('') === computerGuess) && (guessRemain > 0) ) {
-		alert("WINNER!! Congrats!");
 		// audioElement.play(); create var audio and isolate audio element
-		// var audio = document.getElementById("myAudio"); 
-		// // play audio
-		// function playAudio() { 
-  //   	audio.play(); 
-  //   	}
+		var audio = document.getElementById("winAudio1"); 
+		// play audio for winners
+		function playAudio() { 
+    	audio.play(); 
+    	}
+    	playAudio();
+    	alert("WINNER!! Congrats!");
 		wins++;
 		document.getElementById('wins').innerHTML = wins;
 		console.log(document.getElementById('wins').innerHTML = wins);
@@ -161,6 +162,16 @@ function gameDecision() {
 	}
 
 	else if (guessRemain <= 0) {
+		// audioElement.play(); create var audio and isolate audio element
+		var loseAudio = document.getElementById("loseAudio1"); 
+		var loseAudio2 = document.getElementById("loseAudio2");
+		// play audio for losers
+		function playAudio() { 
+    	loseAudio.play(); 
+    	// for more fun use the below audio
+    	// loseAudio2.play();
+    	}
+    	playAudio();
 		alert ("You Lose...Try Again");
 		startGame();
 	}
